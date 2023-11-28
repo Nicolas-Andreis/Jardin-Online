@@ -1,0 +1,7 @@
+.greeting{
+    text-align: center;
+    color: green;
+    position: absolute;
+    right: 50%;
+    top: 1rem;
+}

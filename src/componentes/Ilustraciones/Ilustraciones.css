@@ -1,0 +1,19 @@
+.ilustraciones{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin: 5rem auto;
+}
+.ilustraciones .center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+.circle{
+    width: 10rem;
+    height: 10rem;
+    border-radius: 5rem;
+    background-color: #EDEDED;
+    margin-bottom: 2rem;
+}

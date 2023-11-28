@@ -1,0 +1,43 @@
+.contador{
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    align-items: center;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+.btn-sum{
+    background-color: #739332;
+    border: none;
+    border-radius: 1.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    color: white;
+    font-size: large;
+    cursor: pointer;
+}
+.btn-res{
+    background-color: transparent;
+    border: 2px solid #739332;
+    border-radius: 1rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    color: #739332;
+    font-size: large;
+    cursor: pointer;
+}
+.btn-agregar{
+    background-color: transparent;
+    border: none;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    border-radius: 1rem;
+    width: 10rem;
+    height: 1.5rem;
+    color:  #739332;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.btn-agregar:hover{
+    background-color: #739332;
+    color: white;
+}

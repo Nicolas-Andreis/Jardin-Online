@@ -1,0 +1,30 @@
+.carrito{
+    width: 1.7rem;
+    margin-top: 1rem;
+}
+.containercarrito{
+    width: 2.4rem;
+    height: 2.4rem;
+    background-color: white;
+    border-radius: 2rem;
+    padding: .6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.contador-widget{
+    color: white;
+    width: 1.2rem;
+    height: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+    font-weight: bold;
+    font-size: large;
+    position:relative;
+    top: -2rem;
+    right: -1rem;
+    background-color: #739332;
+}

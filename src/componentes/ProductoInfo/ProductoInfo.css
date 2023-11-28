@@ -1,0 +1,9 @@
+.info{
+text-align: center;
+}
+p:nth-child(3){
+    font-weight: bold;
+    position: relative;
+    bottom: -2.5rem;
+    left: -3rem;
+}

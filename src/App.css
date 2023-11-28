@@ -1,0 +1,24 @@
+
+.container {
+    background-image: "./imagenes/fondo/vista-superior-herramientas-jardineria-maceta.jpg";
+}
+
+.container-productos {
+    display: flex;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+h1{
+    font-family: 'Sacramento', cursive;
+    font-size: 4rem;
+}
+.subtitulos {
+    text-align: center;
+    font-family: 'Sacramento', cursive;
+    font-size: 3rem;
+    color: #739332;
+}
+.poppins{
+    font-family: 'Poppins', sans-serif;
+
+}

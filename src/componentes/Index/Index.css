@@ -1,0 +1,23 @@
+.fondoImagen {
+    background-image: url("../../imagenes/fondo/vista-superior-herramientas-jardineria-maceta.jpg"); /* Reemplaza con la ruta de tu imagen */
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh; /* Establece la altura según sea necesario */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+  .container-title{
+    color: white;
+    width: 50%;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.568);
+    border-radius: 1rem;
+    text-align: center;
+  }
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
