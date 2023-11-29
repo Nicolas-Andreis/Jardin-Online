@@ -2,6 +2,7 @@ import React from 'react'
 import Logo from '../../imagenes/logo/logo.png'
 import Carrito from '../../imagenes/iconos/icons8-shopping-bag-50.png'
 import CartWidget from '../CartWidget/CartWidget';
+import Buscador from '../Buscador/Buscador';
 import './NavBar.css'; 
 const Navbar = () => {
   return (
@@ -10,9 +11,10 @@ const Navbar = () => {
         <img src={Logo} alt="" />
         <h2 className='poppins'>Jardin Online</h2>
         </div>
+        <Buscador/>
         <div className='container-list'>
             <ul className='poppins'>
-                <li>home</li>
+                <li className='active'>home</li>
                 <li>productos</li>
                 <li>nosotros</li>
                 <li>ubicación</li>
