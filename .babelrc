@@ -1,6 +1,0 @@
-{
-    "presets": [
-        "@babel/preset-env", // Para convertir características modernas de JS a versiones más antiguas según entorno
-        "@babel/preset-react" // Si estás trabajando con React
-    ]
-}
