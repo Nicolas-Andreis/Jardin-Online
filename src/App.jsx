@@ -9,6 +9,9 @@ import CarritoBtn from './componentes/MiCarritoBtn/MiCarritoBtn';
 import ItemListContainer from './componentes/ItemListContainer/ItemListContainer';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ItemDetailContainer from './componentes/ItemDetailContainer/ItemDetailContainer';
+import Nosotros from './componentes/Nosotros/Nosotros';
+import Ubicación from './componentes/Ubicación/ubicación';
+
 
 const App = () => {
 
@@ -22,6 +25,8 @@ const App = () => {
           <Route path='/categoria/:idCategoria' element={<ItemListContainer />} />
           <Route path='/item/:idItem' element={<ItemDetailContainer />} />
           <Route path='/productos' element={<ItemListContainer />} />
+          <Route path='/nosotros' element={<Nosotros />} />
+          <Route path='/ubicación' element={<Ubicación />} />
           <Route path='/categoria/todos' element={<ItemListContainer />} />
         </Routes>
       </BrowserRouter>

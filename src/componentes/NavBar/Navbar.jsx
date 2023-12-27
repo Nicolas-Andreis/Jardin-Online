@@ -18,8 +18,8 @@ const Navbar = () => {
             <ul className='poppins'>
                 <li className='active'><NavLink to="/" className='link'>home</NavLink></li>
                 <li><NavLink to="/productos" className='link'>productos</NavLink></li>
-                <li>nosotros</li>
-                <li>ubicación</li>
+                <li><NavLink to="/nosotros" className='link'>nosotros</NavLink></li>
+                <li><NavLink to="/ubicación" className='link'>ubicación</NavLink></li>
                 <li><CartWidget/></li>
             </ul>
         </div>
