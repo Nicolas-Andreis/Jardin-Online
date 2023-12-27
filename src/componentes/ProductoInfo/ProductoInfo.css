@@ -1,7 +1,7 @@
 .info{
 text-align: center;
 }
-p:nth-child(3){
+.precio{
     font-weight: bold;
     position: relative;
     bottom: -2.5rem;

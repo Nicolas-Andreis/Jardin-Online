@@ -1,11 +1,11 @@
 import React from 'react'
 import './ProductoInfo.css'
-const ProductoInfo = () => {
+const ProductoInfo = ({ nombre, precio, categoria}) => {
   return (
     <div className='info'>
-        <h2>Producto</h2>
-        <p>Lorem ipsum, dolor sit amet consectetu.</p>
-        <p>$1000</p>
+        <h2>{nombre}</h2>
+        <p>Categoria: <strong>{categoria}</strong></p>
+        <p className='precio'>${precio}</p>
     </div>
   )
 }
