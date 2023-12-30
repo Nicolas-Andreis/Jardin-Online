@@ -16,7 +16,7 @@ const Navbar = () => {
         <Buscador/>
         <div className='container-list'>
             <ul className='poppins'>
-                <li className='active'><NavLink to="/" className='link'>home</NavLink></li>
+                <li><NavLink to="/" className='link'>home</NavLink></li>
                 <li><NavLink to="/productos" className='link'>productos</NavLink></li>
                 <li><NavLink to="/nosotros" className='link'>nosotros</NavLink></li>
                 <li><NavLink to="/ubicación" className='link'>ubicación</NavLink></li>

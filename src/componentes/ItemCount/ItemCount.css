@@ -5,6 +5,7 @@
     align-items: center;
     font-weight: bold;
     margin-top: 1rem;
+    flex-direction: column;
 }
 .btn-sum{
     background-color: #739332;
@@ -40,4 +41,15 @@
 .btn-agregar:hover{
     background-color: #739332;
     color: white;
+}
+.container-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem auto;
+    width: 100%;
+}
+.numerito{
+    margin: auto 0.5rem;
 }

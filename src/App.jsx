@@ -28,6 +28,7 @@ const App = () => {
           <Route path='/nosotros' element={<Nosotros />} />
           <Route path='/ubicación' element={<Ubicación />} />
           <Route path='/categoria/todos' element={<ItemListContainer />} />
+          <Route path='/cart' element={<h2>en breve tendras tu carrito</h2>} />
         </Routes>
       </BrowserRouter>
     </div>

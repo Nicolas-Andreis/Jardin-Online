@@ -1,39 +1,35 @@
-import React from 'react'
-import { useState } from 'react';
-import './ItemCount.css'
+// ItemCount.jsx
+import React, { useState } from 'react';
+import './ItemCount.css';
 
-const ItemCount = () => {
-    const [contador, setContador] = useState(0);
-
-    //3 creamos las funciones para aumetar el contador o disminuir
-    let stock = 10;
+const ItemCount = ({ inicial, stock, funcionAgregar }) => {
+    const [contador, setContador] = useState(inicial);
 
     const incrementar = () => {
-        if(contador < stock){
+        if (contador < stock) {
             setContador(contador + 1);
         }
-        
     }
 
     const decrementar = () => {
-        if (contador > 0){
+        if (contador > inicial) {
             setContador(contador - 1);
         }
-        
     }
-  return (
-    <div className='contador'>
-    {contador === 0 ? (
-        <button onClick={incrementar} className='btn-agregar'> agregar </button>
-    ) : (
-        <>
-            <button onClick={decrementar} className='btn-res'> - </button>
-            <p> {contador} </p>
-            <button onClick={incrementar} className='btn-sum'> + </button>
-        </>
-    )}
-</div>
-  )
+
+    return (
+        <div className='contador'>
+
+            <div className='container-buttons'>
+                <button onClick={decrementar} className='btn-res'> - </button>
+                <p className='numerito'> {contador} </p>
+                <button onClick={incrementar} className='btn-sum'> + </button>
+            </div>
+            <button onClick={() => funcionAgregar(contador)} className='btn-agregar'>
+                Agregar
+            </button>
+        </div>
+    )
 }
 
-export default ItemCount
+export default ItemCount;

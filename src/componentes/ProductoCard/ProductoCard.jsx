@@ -10,7 +10,7 @@ const ProductoCard = ({ id, nombre, precio, img, categoria }) => {
         <div className='card poppins'>
             <ProductoImagen img={img} />
             <ProductoInfo nombre={nombre} precio={precio} categoria={categoria}/>
-            <ProductoBoton id={id} />
+            {/* <ProductoBoton id={id} /> */}
             <Link to={`/item/${id}`} className='link'><button className='btn-ver'>ver más</button></Link>
             
         </div>

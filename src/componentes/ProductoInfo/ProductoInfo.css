@@ -3,7 +3,4 @@ text-align: center;
 }
 .precio{
     font-weight: bold;
-    position: relative;
-    bottom: -2.5rem;
-    left: -3rem;
 }

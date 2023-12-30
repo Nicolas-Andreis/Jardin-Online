@@ -1,0 +1,22 @@
+.container-ubicación{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+.card-ubicación{
+    width: 90%;
+    height: 70%;
+    margin: auto;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    border-radius: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+.card-ubicación iframe {
+    width: 20rem;
+    height: 15rem;
+    border-radius: 1rem;
+}
