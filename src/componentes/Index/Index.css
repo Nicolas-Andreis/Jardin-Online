@@ -23,7 +23,7 @@
 }
 
 .container {
-  background-image: "../../imagenes/fondo/vista-superior-herramientas-jardineria-maceta-min.jpg";
+  background-image: "./imagenes/fondo/vista-superior-herramientas-jardineria-maceta.jpg";
   padding: 0 !important;
   max-width: 100% !important;
 }
