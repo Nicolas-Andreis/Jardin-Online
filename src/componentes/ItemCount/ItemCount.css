@@ -16,6 +16,9 @@
     color: white;
     font-size: large;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .btn-res{
     background-color: transparent;
@@ -26,6 +29,9 @@
     color: #739332;
     font-size: large;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .btn-agregar{
     background-color: transparent;

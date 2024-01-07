@@ -4,3 +4,8 @@ text-align: center;
 .precio{
     font-weight: bold;
 }
+@media (max-width: 768px){
+    .info h2:nth-child(1){
+        font-size: medium;
+    }
+}

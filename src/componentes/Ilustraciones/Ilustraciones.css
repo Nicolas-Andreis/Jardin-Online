@@ -17,3 +17,28 @@
     background-color: #EDEDED;
     margin-bottom: 2rem;
 }
+
+@media (max-width: 768px){
+.ilustraciones{
+    width: 100%;
+    overflow-x: auto;
+    flex-direction: row;
+    align-items: center;
+    display: none;
+}
+.ilustraciones .center{
+    margin: 0 2rem;
+}
+.ilustraciones .center:nth-child(1){
+    margin-left: 15rem !important;
+}
+.circle{
+    margin: 1rem auto;
+    width: 3rem;
+    height: 3rem;
+}
+.circle img{
+    width: 4rem;
+    height: 4rem;
+}
+}

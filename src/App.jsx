@@ -11,25 +11,28 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ItemDetailContainer from './componentes/ItemDetailContainer/ItemDetailContainer';
 import Nosotros from './componentes/Nosotros/Nosotros';
 import Ubicación from './componentes/Ubicación/ubicación';
-
+import { CarritoProvider } from './context/CarritoContext';
+import Cart from './componentes/Cart/Cart';
 
 const App = () => {
 
   return (
     <div className='container'>
       <BrowserRouter>
-        <NavBar />
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/Jardin-Online/' element={<Home />} />
-          <Route path='/categoria/:idCategoria' element={<ItemListContainer />} />
-          <Route path='/item/:idItem' element={<ItemDetailContainer />} />
-          <Route path='/productos' element={<ItemListContainer />} />
-          <Route path='/nosotros' element={<Nosotros />} />
-          <Route path='/ubicación' element={<Ubicación />} />
-          <Route path='/categoria/todos' element={<ItemListContainer />} />
-          <Route path='/cart' element={<h2>en breve tendras tu carrito</h2>} />
-        </Routes>
+        <CarritoProvider>
+          <NavBar />
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/Jardin-Online/' element={<Home />} />
+            <Route path='/categoria/:idCategoria' element={<ItemListContainer />} />
+            <Route path='/item/:idItem' element={<ItemDetailContainer />} />
+            <Route path='/productos' element={<ItemListContainer />} />
+            <Route path='/nosotros' element={<Nosotros />} />
+            <Route path='/ubicación' element={<Ubicación />} />
+            <Route path='/categoria/todos' element={<ItemListContainer />} />
+            <Route path='/cart' element={<Cart/>} />
+          </Routes>
+        </CarritoProvider>
       </BrowserRouter>
     </div>
   )

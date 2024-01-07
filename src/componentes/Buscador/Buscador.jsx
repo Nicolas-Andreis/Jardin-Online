@@ -1,21 +1,30 @@
-import React from 'react'
-import './Buscador.css'
-import lupa from '../../imagenes/iconos/lupa.png'
+import React, { useState } from 'react';
+import './Buscador.css';
+import lupa from '../../imagenes/iconos/lupa.png';
+import { Link } from 'react-router-dom';
 
-const Buscador = ({ onBuscar }) => {
+const Buscador = () => {
+  const [mostrarSugerencias, setMostrarSugerencias] = useState(false);
+  const categorias = ['todos', 'macetas', 'semillas', 'plantas'];
+
   return (
     <div className='buscador'>
-      <button className='container-lupa'>
-        <img src={lupa} alt='' className='lupa' />
+      <button onClick={() => setMostrarSugerencias(!mostrarSugerencias)} className='btn-buscar poppins'>
+        Buscar
       </button>
-      <input
-        type='text'
-        className='input poppins'
-        placeholder='Buscar'
-        onChange={onBuscar}
-      />
+      {mostrarSugerencias && (
+        <ul className='container-ul'>
+          {categorias.map((categoria) => (
+            <li key={categoria}>
+              <Link to={`/categoria/${categoria}`} className='categoria-link poppins'>
+                {categoria.charAt(0).toUpperCase() + categoria.slice(1)}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 };
 
-export default Buscador
+export default Buscador;

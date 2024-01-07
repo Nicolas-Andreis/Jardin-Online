@@ -17,12 +17,11 @@
     cursor: pointer;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
-.micarritobtn:hover{
-    background-color: #73933227;
-    box-shadow: none;
-    
-}
+
 .micarritobtn img{
     width: 2rem;
     margin-left: 1rem;
+}
+.link-carrito{
+    text-decoration: none;
 }

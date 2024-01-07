@@ -22,7 +22,7 @@ const Index = () => {
                     </h1>
                 </div>
             </div>
-            <h2 className='subtitulos'>Nosotros te ayudamos</h2>
+            <h2 className='subtitulos mobile-ocultar'>Nosotros te ayudamos</h2>
             <Ilustraciones />
             <div className='container-productos'>
                 <ItemListContainer />

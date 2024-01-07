@@ -18,3 +18,16 @@
 .card-nosotros img{
     width: 20rem;
 }
+@media (max-width: 768px) {
+    .card-nosotros img{
+        width: 50%;
+        margin-bottom: 1rem;
+    }
+    .container-nosotros{
+        flex-direction: column;
+    }
+    .card-nosotros{
+        flex-direction: column-reverse;
+        height: 90%;
+    }
+}

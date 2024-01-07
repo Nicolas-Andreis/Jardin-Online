@@ -49,3 +49,14 @@ h1{
   font-family: 'Poppins', sans-serif;
 
 }
+@media (max-width: 768px){
+  .mobile-ocultar{
+    display: none;
+  }
+  .container-title h1:nth-child(1){
+    font-size: 3rem;
+  }
+  .fondoImagen{
+    height: 90vh;
+  }
+}

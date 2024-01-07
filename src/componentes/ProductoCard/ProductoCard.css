@@ -30,3 +30,8 @@
     background-color: #739332;
     color: white;
 }
+@media (max-width: 768px){
+    .card{
+        margin: 1rem 0.5rem;
+    }
+}
