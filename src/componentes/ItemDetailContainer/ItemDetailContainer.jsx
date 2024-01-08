@@ -14,7 +14,9 @@ const ItemDetailContainer = () => {
 
         getDoc(nuevoDoc)
             .then(res => {
-                console.log({...res.data(), id: res.id});
+                const data = res.data();
+                const nuevoProducto = { id: res.id, ...data };
+                setProducto(nuevoProducto);
             })
             .catch(error => console.log("Se prohiben los findes ", error))
     }, [idItem])
