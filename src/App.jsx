@@ -13,6 +13,7 @@ import Nosotros from './componentes/Nosotros/Nosotros';
 import Ubicación from './componentes/Ubicación/ubicación';
 import { CarritoProvider } from './context/CarritoContext';
 import Cart from './componentes/Cart/Cart';
+import Checkout from './componentes/Checkout/Checkout';
 
 const App = () => {
 
@@ -31,6 +32,7 @@ const App = () => {
             <Route path='/ubicación' element={<Ubicación />} />
             <Route path='/categoria/todos' element={<ItemListContainer />} />
             <Route path='/cart' element={<Cart/>} />
+            <Route path='/checkout' element={<Checkout/>} />
           </Routes>
         </CarritoProvider>
       </BrowserRouter>

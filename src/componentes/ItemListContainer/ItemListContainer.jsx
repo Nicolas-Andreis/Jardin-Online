@@ -21,12 +21,12 @@ const ItemListContainer = () => {
 
   useEffect(() => {
     const misProductos = idCategoria ? query(collection(db, "Inventario"), where("categoria", "==", idCategoria)) : collection(db, "Inventario");
-
+    
     getDocs(misProductos)
       .then(res => {
         const nuevosProductos = res.docs.map(doc => {
           const data = doc.data();
-          return {if:doc.id, ...data}
+          return {id:doc.id, ...data}
         })
         setProductos(nuevosProductos);
       })

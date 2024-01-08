@@ -1,4 +1,4 @@
-import colgantesoga from './imagenes/bases/colgantesoga.jpg';
+import colgantesoga from '../imagenes/bases/colgantesoga.jpg';
 import hierronordico from './imagenes/bases/Plantas-Faitful-Portamacetas-Hierro-Nordico-1.jpg';
 import portamacetasHierro from './imagenes/bases/portamacetas hierro.jpg';
 import tornomoldeada from './imagenes/macetas/Faitful-Maceta-Rotomoldeada-Inca-N°40-1.jpg';

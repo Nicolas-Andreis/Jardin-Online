@@ -98,9 +98,13 @@ export const CarritoProvider = ({ children }) => {
         });
 
     }
-
+    const vaciarCarrito2 = () => {
+        setCarrito([]);
+        setCantidadTotal(0);
+        setTotal(0);
+    };
     return (
-        <CarritoContext.Provider value={{ carrito, total, cantidadTotal, agregarAlCarrito, eliminarProducto, vaciarCarrito }}>
+        <CarritoContext.Provider value={{ carrito, total, cantidadTotal, agregarAlCarrito, eliminarProducto, vaciarCarrito, vaciarCarrito2 }}>
             {children}
         </CarritoContext.Provider>
     );

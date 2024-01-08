@@ -4,12 +4,13 @@ import { useParams } from "react-router-dom";
 import { db } from "../../services/config";
 import { getDoc, doc } from "firebase/firestore";
 
-
+import plata from "../../imagenes/plantas/cereus-cactus-olla.jpg"
 const ItemDetailContainer = () => {
     const [producto, setProducto] = useState(null);
     const { idItem } = useParams();
 
     useEffect(() => {
+        console.log(idItem);
         const nuevoDoc = doc(db, "Inventario", idItem);
 
         getDoc(nuevoDoc)
