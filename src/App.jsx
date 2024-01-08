@@ -25,7 +25,7 @@ const App = () => {
             <Route path='/' element={<Home />} />
             <Route path='/Jardin-Online/' element={<Home />} />
             <Route path='/categoria/:idCategoria' element={<ItemListContainer />} />
-            <Route path='/item/:idItem' element={<ItemDetailContainer />} />
+            <Route path="/item/:idItem" element={<ItemDetailContainer/>}  />
             <Route path='/productos' element={<ItemListContainer />} />
             <Route path='/nosotros' element={<Nosotros />} />
             <Route path='/ubicación' element={<Ubicación />} />
