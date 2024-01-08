@@ -10,31 +10,20 @@ const ItemDetailContainer = () => {
     const { idItem } = useParams();
 
     useEffect(() => {
-        const obtenerProducto = async () => {
-            try {
-                const nuevoDoc = doc(db, "Inventario", idItem);
-                const docSnap = await getDoc(nuevoDoc);
+        const nuevoDoc = doc(db, "Inventario", idItem);
 
-                if (docSnap.exists()) {
-                    const data = docSnap.data();
-                    const nuevoProducto = { id: docSnap.id, ...data };
-                    setProducto(nuevoProducto); // Actualizar el estado del producto
-                } else {
-                    console.log("No se encontró el documento");
-                }
-            } catch (error) {
-                console.error("Error al obtener el documento:", error);
-            }
-        };
-
-        obtenerProducto();
-    }, [idItem]);
+        getDoc(nuevoDoc)
+            .then(res => {
+                console.log({...res.data(), id: res.id});
+            })
+            .catch(error => console.log("Se prohiben los findes ", error))
+    }, [idItem])
 
     return (
         <div>
             <ItemDetail {...producto} />
         </div>
-    );
+    )
 }
 
-export default ItemDetailContainer;
+export default ItemDetailContainer
