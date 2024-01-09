@@ -2,6 +2,7 @@ import { useState, useContext } from "react";
 import { CarritoContext } from "../../context/CarritoContext";
 import { db } from "../../services/config";
 import { collection, addDoc, updateDoc, getDoc, doc } from "firebase/firestore";
+import './Checkout.css';
 
 const Checkout = () => {
     const { carrito, vaciarCarrito2, total, cantidadTotal } = useContext(CarritoContext);
@@ -51,90 +52,105 @@ const Checkout = () => {
                 }
             })
         )
-        .then(() => {
-            const orden = {
-                items: carrito.map(producto => ({
-                    id: producto.item.id,
-                    nombre: producto.item.nombre,
-                    cantidad: producto.cantidad
-                })),
-                total: total,
-                fecha: new Date(),
-                nombre,
-                apellido,
-                telefono,
-                email
-            };
+            .then(() => {
+                const orden = {
+                    items: carrito.map(producto => ({
+                        id: producto.item.id,
+                        nombre: producto.item.nombre,
+                        cantidad: producto.cantidad
+                    })),
+                    total: total,
+                    fecha: new Date(),
+                    nombre,
+                    apellido,
+                    telefono,
+                    email
+                };
 
-            addDoc(collection(db, "ordenes"), orden)
-                .then(docRef => {
-                    setOrdenId(docRef.id);
-                    vaciarCarrito2();
-                })
-                .catch(error => {
-                    console.error("Error al crear la orden ", error);
-                    setError("No se pudo crear la orden");
-                });
-        })
-        .catch(error => {
-            console.error("No se pudo actualizar el stock ", error);
-            setError("No se pudo actualizar el stock");
-        });
+                addDoc(collection(db, "ordenes"), orden)
+                    .then(docRef => {
+                        setOrdenId(docRef.id);
+                        vaciarCarrito2();
+                    })
+                    .catch(error => {
+                        console.error("Error al crear la orden ", error);
+                        setError("No se pudo crear la orden");
+                    });
+            })
+            .catch(error => {
+                console.error("No se pudo actualizar el stock ", error);
+                setError("No se pudo actualizar el stock");
+            });
     };
 
     return (
-        <div>
-            <h3>Checkout</h3>
-            <form onSubmit={manejadorSubmit}>
-                {
-                    carrito.map(producto => (
-                        <div key={producto.item.id}>
-                            <p>{producto.item.nombre} x {producto.cantidad}</p>
-                            <p>Precio: $ {producto.item.precio}</p>
-                            <hr />
+        <div className="container-checkout">
+            <div className="card-checkout">
+                <h3 className="poppins title-checkout">Jardin Online <br />Checkout</h3>
+                <form onSubmit={manejadorSubmit}>
+                    <div className="container-productos-checkout">
+                        <h3 className="poppins">Productos:</h3>
+                        {
+                            carrito.map(producto => (
+                                <div className="poppins productos-checkout" key={producto.item.id}>
+                                    <p>{producto.item.nombre} x {producto.cantidad}</p>
+                                    <p>Precio: $ {producto.item.precio}</p>
+
+                                </div>
+                            ))
+                        }
+
+                    </div>
+
+                    <div className="container-verde">
+                        <div className="container-label-checkout poppins">
+                            <label htmlFor="">Nombre</label>
+                            <input type="text" onChange={(e) => setNombre(e.target.value)} />
                         </div>
-                    ))
-                }
-                <hr />
 
-                <div>
-                    <label htmlFor="">Nombre</label>
-                    <input type="text" onChange={(e) => setNombre(e.target.value)} />
-                </div>
+                        <div className="container-label-checkout poppins">
+                            <label htmlFor="">Apellido</label>
+                            <input type="text" onChange={(e) => setApellido(e.target.value)} />
+                        </div>
 
-                <div>
-                    <label htmlFor="">Apellido</label>
-                    <input type="text" onChange={(e) => setApellido(e.target.value)} />
-                </div>
+                        <div className="container-label-checkout poppins">
+                            <label htmlFor="">Teléfono</label>
+                            <input type="text" onChange={(e) => setTelefono(e.target.value)} />
+                        </div>
 
-                <div>
-                    <label htmlFor="">Teléfono</label>
-                    <input type="text" onChange={(e) => setTelefono(e.target.value)} />
-                </div>
+                        <div className="container-label-checkout poppins">
+                            <label htmlFor="">Email</label>
+                            <input type="email" onChange={(e) => setEmail(e.target.value)} />
+                        </div>
 
-                <div>
-                    <label htmlFor="">Email</label>
-                    <input type="email" onChange={(e) => setEmail(e.target.value)} />
-                </div>
+                        <div className="container-label-checkout poppins">
+                            <label htmlFor="">Email confirmación</label>
+                            <input type="email" onChange={(e) => setEmailConfirmacion(e.target.value)} />
+                        </div>
 
-                <div>
-                    <label htmlFor="">Email confirmación</label>
-                    <input type="email" onChange={(e) => setEmailConfirmacion(e.target.value)} />
-                </div>
+                        {
+                            error && <p> {error} </p>
+                        }
+                        <div className="container-btn-checkout">
+                            <button type='submit' className="btn-checkout"> Finalizar Orden</button>
+                        </div>
 
-                {
-                    error && <p> {error} </p>
-                }
 
-                <button type='submit'> Finalizar Orden</button>
+                        {
+                            ordenId && (
+                                <div className="container-confirmacion">
+                                    <strong className="poppins">Gracias por su compra! tu número de orden es: {ordenId}</strong>
+                                </div>
 
-                {
-                    ordenId && (
-                        <strong>Gracias por su compra! tu número de orden es: {ordenId}</strong>
-                    )
-                }
+                            )
+                        }
 
-            </form>
+                    </div>
+
+
+                </form>
+            </div>
+
         </div>
     )
 }
