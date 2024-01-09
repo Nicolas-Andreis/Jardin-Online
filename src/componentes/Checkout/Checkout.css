@@ -7,7 +7,6 @@
     width: 30%;
     height: 100%;
     margin: 0 auto;
-    text-align: center;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -17,6 +16,7 @@
 }
 .title-checkout{
     border-bottom: dotted black 3px;
+    text-align: center;
 }
 .productos-checkout{
     display: flex;
@@ -66,6 +66,31 @@
     border-radius: 1rem;
     padding: .5rem;
     color: white;
+}
+.container-total-checkout{
+    display: flex;
+    justify-content: space-between;
+    padding: .5rem;
+    font-weight: bold;
+    border-bottom: dotted black 3px;
+}
+.back{
+    border: #739332 solid 3px;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 90%;
+    margin-top: .5rem;
+}
+.back img{
+    width: 1.5rem;
+    height: 1.5rem;
+}
+.container-form{
+    text-align: center;
 }
 @media (max-width: 768px){
     .card-checkout{

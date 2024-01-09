@@ -29,5 +29,6 @@
     .card-nosotros{
         flex-direction: column-reverse;
         height: 90%;
+        text-align: center;
     }
 }

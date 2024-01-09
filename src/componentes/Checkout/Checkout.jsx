@@ -2,6 +2,8 @@ import { useState, useContext } from "react";
 import { CarritoContext } from "../../context/CarritoContext";
 import { db } from "../../services/config";
 import { collection, addDoc, updateDoc, getDoc, doc } from "firebase/firestore";
+import { Link } from "react-router-dom";
+import back from "../../imagenes/iconos/icons8-arrow-50.png";
 import './Checkout.css';
 
 const Checkout = () => {
@@ -86,7 +88,9 @@ const Checkout = () => {
     return (
         <div className="container-checkout">
             <div className="card-checkout">
+                <Link to="/cart" className="back"><img src={back} alt="" /></Link>
                 <h3 className="poppins title-checkout">Jardin Online <br />Checkout</h3>
+
                 <form onSubmit={manejadorSubmit}>
                     <div className="container-productos-checkout">
                         <h3 className="poppins">Productos:</h3>
@@ -101,8 +105,11 @@ const Checkout = () => {
                         }
 
                     </div>
-
-                    <div className="container-verde">
+                    <div className="container-total-checkout poppins">
+                        <p>Articulos: {cantidadTotal}</p>
+                        <p>Total: ${total}</p>
+                    </div>
+                    <div className="container-form">
                         <div className="container-label-checkout poppins">
                             <label htmlFor="">Nombre</label>
                             <input type="text" onChange={(e) => setNombre(e.target.value)} />

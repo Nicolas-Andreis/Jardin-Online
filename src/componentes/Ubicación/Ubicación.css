@@ -5,7 +5,7 @@
     height: 80vh;
 }
 .card-ubicación{
-    width: 90%;
+    width: 60%;
     height: 70%;
     margin: auto;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
@@ -14,14 +14,25 @@
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
+    text-align: center;
 }
 .card-ubicación iframe {
     width: 20rem;
     height: 15rem;
     border-radius: 1rem;
 }
+.text-ubicación{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+}
 @media (max-width: 768px) {
     .card-ubicación{
         flex-direction: column;
+        height: 100%;
+    }
+    .card-ubicación iframe{
+        width: 90%;
     }
 }

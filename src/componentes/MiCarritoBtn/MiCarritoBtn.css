@@ -25,3 +25,8 @@
 .link-carrito{
     text-decoration: none;
 }
+@media (max-width: 768px) {
+    .micarritobtn{
+        font-size: large;
+    }
+}

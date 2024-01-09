@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './Buscador.css';
-import lupa from '../../imagenes/iconos/lupa.png';
 import { Link } from 'react-router-dom';
 
 const Buscador = () => {
