@@ -12,17 +12,44 @@
     background-color: transparent;
     height: 2rem;
     width: 2rem;
-    border-radius: 1rem;
+    border-radius: 3rem;
     border: 3px solid #739332;
     color: #739332;
     font-weight: bold;
     cursor: pointer;
+    margin-left: .5rem;
+}
+.eliminarProducto img{
+    width: 1.2rem;
+    height: 1.5rem;
+    object-fit: contain;
 }
 .imagen-cart{
     width: 3.5rem;
     height: 3.5rem;
     border-radius: .5rem;
     object-fit: cover;
+}
+.container-count{
+    display: flex;
+}
+.container-count p{
+    margin: auto .5rem;
+}
+.container-buttons-cart{
+    display: flex;
+    flex-direction: column-reverse;
+    width: 5rem;
+    margin: 0;
+}
+.container-butons-general{
+    display: flex;
+    flex-direction: row;
+    width: 9rem;
+    align-items: center;
+}
+.total-precio{
+    font-weight: bold;
 }
 @media (max-width: 768px) {
     .cartitem{

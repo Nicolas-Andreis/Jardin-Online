@@ -5,8 +5,36 @@ import CartItem from "../CartItem/CartItem";
 import './Cart.css';
 
 const Cart = () => {
-    const { carrito, vaciarCarrito, total, cantidadTotal } = useContext(CarritoContext);
+    const { carrito, vaciarCarrito, total, cantidadTotal, actualizarCarrito, actualizarTotal } = useContext(CarritoContext);
+    const incrementarCantidad = (item) => {
+        const updatedCart = carrito.map(producto => {
+            if (producto.item.id === item.id) {
+                return {
+                    ...producto,
+                    cantidad: producto.cantidad + 1
+                };
+            }
+            return producto;
+        });
+        
+        actualizarCarrito(updatedCart); // Actualizar el carrito con la cantidad actualizada
+        actualizarTotal(total + item.precio); // Actualizar el total
+    };
 
+    const decrementarCantidad = (item) => {
+        const updatedCart = carrito.map(producto => {
+            if (producto.item.id === item.id) {
+                return {
+                    ...producto,
+                    cantidad: producto.cantidad - 1
+                };
+            }
+            return producto;
+        });
+
+        actualizarCarrito(updatedCart); // Actualizar el carrito con la cantidad actualizada
+        actualizarTotal(total - item.precio); // Actualizar el total
+    };
     if (cantidadTotal === 0) {
         return (
             <div className="container-vacio">
@@ -24,6 +52,8 @@ const Cart = () => {
                     key={producto.item.id}
                     item={producto.item} // Pasar el objeto 'item' directamente en lugar de desempaquetar props
                     cantidad={producto.cantidad} // Pasar 'cantidad' directamente en lugar de desempaquetar props
+                    onIncrementar={incrementarCantidad}
+                    onDecrementar={decrementarCantidad}
                 />
             ))}
             <div className="containerbuttoncompras">

@@ -8,7 +8,7 @@ const CartWidget = ({ closeMenu }) => {
   const {cantidadTotal} = useContext(CarritoContext);
   return (
     <div className='containercarrito' onClick={closeMenu}>
-      <Link to="/cart">
+      <Link to="/cart" className='link-cart'>
       <img src={Carrito} alt="" className='carrito' />
       {
         cantidadTotal > 0 && <p className='contador-widget'>{cantidadTotal}</p>

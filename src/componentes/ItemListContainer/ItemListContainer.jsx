@@ -32,20 +32,6 @@ const ItemListContainer = () => {
       .catch(error => console.log("error", error))
   }, [idCategoria])
 
-  // useEffect(() => {
-  //     const funcionProductos = idCategoria ? getProductosPorCategoria : getProductos;
-
-  //     funcionProductos(idCategoria)
-  //         .then(respuesta => setProductos(respuesta))
-  // }, [idCategoria]);
-
-  // Si no hay ninguna categoría seleccionada, obtener todos los productos
-  // useEffect(() => {
-  //     if (!idCategoria) {
-  //         getProductos().then(respuesta => setProductos(respuesta));
-  //     }
-  // }, [idCategoria]);
-
   return (
     <div className='container-productos'>
     <Categorias cambiarTitulo={cambiarTituloCategoria} titulo={titulo} />
