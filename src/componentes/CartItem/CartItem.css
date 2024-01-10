@@ -50,9 +50,16 @@
 }
 .total-precio{
     font-weight: bold;
+    text-align: center;
 }
 @media (max-width: 768px) {
     .cartitem{
         text-align: center;
+    }
+    .eliminarProducto{
+        margin-left: 1.5rem;
+    }
+    .container-count{
+        margin: auto;
     }
 }
