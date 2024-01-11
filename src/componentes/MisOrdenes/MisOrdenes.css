@@ -1,0 +1,44 @@
+.container-orders{
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    width: 50%;
+    margin: 0 auto;
+    padding: 1rem;
+    border-radius: .5rem;
+}
+.btn-order{
+    width: 80%;
+    margin: .2rem auto;
+    background-color: transparent;
+    border: none;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    border-radius: .5rem;
+    color: black;
+}
+.misordertitle{
+    width: 50%;
+    margin: 1rem auto;
+}
+.btn-borrar-historial{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10rem;
+    height: 2rem;
+    background-color: transparent;
+    margin: 1rem auto;
+    border: 1px solid #739332;
+    border-radius: .5rem;
+    color: #739332;
+    cursor: pointer;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+@media (max-width: 768px) {
+    .container-orders{
+        width: 90%;
+    }
+    .misordertitle{
+        width: 90%;
+    }
+}

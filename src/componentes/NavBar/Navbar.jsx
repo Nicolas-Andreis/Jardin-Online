@@ -31,7 +31,7 @@ const Navbar = () => {
           <li><NavLink to="/" className='link' onClick={closeMenu}>home</NavLink></li>
           <li><NavLink to="/productos" className='link' onClick={closeMenu}>productos</NavLink></li>
           <li><NavLink to="/nosotros" className='link' onClick={closeMenu}>nosotros</NavLink></li>
-          <li><NavLink to="/ubicación" className='link' onClick={closeMenu}>ubicación</NavLink></li>
+          <li><NavLink to="/misOrdenes" className='link' onClick={closeMenu}>mis ordenes</NavLink></li>
           <li onClick={closeMenu}><div><CartWidget /></div></li>
         </ul>
       </div>

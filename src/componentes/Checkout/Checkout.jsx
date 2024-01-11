@@ -5,9 +5,12 @@ import { collection, addDoc, updateDoc, getDoc, doc } from "firebase/firestore";
 import { Link } from "react-router-dom";
 import back from "../../imagenes/iconos/icons8-arrow-50.png";
 import './Checkout.css';
+import { useOrder } from '../../context/MisOrdenesContext';
+import MisOrdenes from "../MisOrdenes/MisOrdenes";
 
 const Checkout = () => {
     const { carrito, vaciarCarrito2, total, cantidadTotal } = useContext(CarritoContext);
+    const { agregarAMisOrdenes } = useOrder(); // Obtén la función desde el contexto 
 
     const [nombre, setNombre] = useState("");
     const [apellido, setApellido] = useState("");
@@ -73,6 +76,9 @@ const Checkout = () => {
                     .then(docRef => {
                         setOrdenId(docRef.id);
                         vaciarCarrito2();
+                        // Llama a la función para agregar el orderId al contexto de MisOrdenes
+                        agregarAMisOrdenes(docRef.id);
+                        console.log(MisOrdenes);
                     })
                     .catch(error => {
                         console.error("Error al crear la orden: ", error);
