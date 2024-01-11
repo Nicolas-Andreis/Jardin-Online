@@ -18,7 +18,7 @@ const Categorias = ({ cambiarTitulo, cambiarCategoria }) => {
 
     return (
         <div>
-            <h2 className='subtitulos'>Categorias</h2>
+            <h2 className='subtitulos'>Categorías</h2>
             <div className='categoria-container'>
             <Link to="/categoria/todos" className='link-b'>
                 <div className='categoria-rectangle' onClick={() => handleClickCategoria('Todos')}>

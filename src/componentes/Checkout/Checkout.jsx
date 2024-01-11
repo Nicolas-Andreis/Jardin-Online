@@ -75,8 +75,8 @@ const Checkout = () => {
                         vaciarCarrito2();
                     })
                     .catch(error => {
-                        console.error("Error al crear la orden ", error);
-                        setError("No se pudo crear la orden");
+                        console.error("Error al crear la orden: ", error);
+                        setError("No se pudo crear la orden: " + error.message);
                     });
             })
             .catch(error => {

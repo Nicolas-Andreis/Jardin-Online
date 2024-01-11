@@ -17,7 +17,7 @@ const Index = () => {
             <div className="fondoImagen">
                 <div className='container-title'>
                     <h1>
-                        jardin online <br />
+                        Jardín online <br />
                         amor por las plantas
                     </h1>
                 </div>
