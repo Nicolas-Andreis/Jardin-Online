@@ -1,15 +1,20 @@
-//1) Voy a importar useState y createContext que me permite crear un contexto que almacenará toda la logica de mi carrillo de compras. 
-
+// Importamos los hooks y funciones necesarios
 import { useState, createContext, useEffect } from "react";
 
-//2)Creamos el context: 
+// Creamos el contexto para el carrito de compras
 export const CarritoContext = createContext({
     carrito: [],
     total: 0,
-    cantidadTotal: 0
+    cantidadTotal: 0,
+    agregarAlCarrito: () => { },
+    eliminarProducto: () => { },
+    vaciarCarrito: () => { },
+    vaciarCarrito2: () => { },
 });
 
+// Proveedor del contexto de carrito
 export const CarritoProvider = ({ children }) => {
+    // Estados locales para el carrito, total y cantidad total
     const [carrito, setCarrito] = useState(() => {
         const carritoGuardado = JSON.parse(localStorage.getItem("carrito")) || [];
         return carritoGuardado;
@@ -41,23 +46,18 @@ export const CarritoProvider = ({ children }) => {
         localStorage.setItem("cantidadTotal", cantidadTotal.toString());
     }, [carrito, total, cantidadTotal]);
 
-    const guardarEnLocalStorage = () => {
-        // Guardar datos en el localStorage
-        localStorage.setItem('carrito', JSON.stringify(carrito));
-        localStorage.setItem('total', total.toString());
-        localStorage.setItem('cantidadTotal', cantidadTotal.toString());
-    };
-    //Agregamos algunas funciones para lo lógica del carrito: 
-
+    // Función para agregar un producto al carrito
     const agregarAlCarrito = (item, cantidad) => {
+        // Verificar si el producto ya está en el carrito
         const productoExistente = carrito.find(prod => prod.item.id === item.id);
 
         if (!productoExistente) {
+            // Si no existe, agregar el nuevo producto al carrito
             setCarrito(prev => [...prev, { item, cantidad }]);
             setCantidadTotal(prev => prev + cantidad);
             setTotal(prev => prev + (item.precio * cantidad));
-            //La sintaxis: prev => [...prev, {item, cantidad}] se utiliza para crear un nuevo array a partir del estado anterior del carrito y agregar un nuevo objeto que representa el producto agregado. 
         } else {
+            // Si ya existe, actualizar la cantidad del producto existente en el carrito
             const carritoActualizado = carrito.map(prod => {
                 if (prod.item.id === item.id) {
                     return { ...prod, cantidad: prod.cantidad + cantidad };
@@ -68,53 +68,27 @@ export const CarritoProvider = ({ children }) => {
             setCarrito(carritoActualizado);
             setCantidadTotal(prev => prev + cantidad);
             setTotal(prev => prev + (item.precio * cantidad));
-            guardarEnLocalStorage();
         }
     }
 
-    //Funcion para eliminar un producto: 
-
+    // Función para eliminar un producto del carrito
     const eliminarProducto = (id) => {
-        Swal.fire({
-            title: "Estas seguro?",
-            text: "Eliminaras este producto",
-            icon: "question",
-            showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Eliminar",
-            cancelButtonText: "Cancelar",
-        }).then((result) => {
-            if (result.isConfirmed) {
-                const productoEliminado = carrito.find(prod => prod.item.id === id);
-                const carritoActualizado = carrito.filter(prod => prod.item.id !== id);
+        // Encontrar el producto a eliminar en el carrito
+        const productoEliminado = carrito.find(prod => prod.item.id === id);
+        // Filtrar el carrito para excluir el producto a eliminar
+        const carritoActualizado = carrito.filter(prod => prod.item.id !== id);
 
-
-                setCarrito(carritoActualizado);
-                setCantidadTotal(prev => prev - productoEliminado.cantidad);
-                setTotal(prev => prev - (productoEliminado.item.precio * productoEliminado.cantidad));
-                guardarEnLocalStorage();
-                Swal.fire({
-                    title: "Eliminado",
-                    text: "Eliminaste este producto",
-                    icon: "error"
-                });
-            }
-        });
-
-
-    }
-    const vaciarCarrito2 = () => {
-        setCarrito([]);
-        setCantidadTotal(0);
-        setTotal(0);
-        guardarEnLocalStorage();
+        // Actualizar los estados y guardar en el localStorage
+        setCarrito(carritoActualizado);
+        setCantidadTotal(prev => prev - productoEliminado.cantidad);
+        setTotal(prev => prev - (productoEliminado.item.precio * productoEliminado.cantidad));
     }
 
+    // Función para vaciar completamente el carrito con confirmación
     const vaciarCarrito = () => {
         Swal.fire({
-            title: "Estas seguro?",
-            text: "Eliminaras todos tus productos del carrito",
+            title: "Estás seguro?",
+            text: "Eliminarás todos tus productos del carrito",
             icon: "question",
             showCancelButton: true,
             confirmButtonColor: "#d33",
@@ -123,10 +97,10 @@ export const CarritoProvider = ({ children }) => {
             cancelButtonText: "Conservar"
         }).then((result) => {
             if (result.isConfirmed) {
+                // Limpiar el carrito, actualizar estados y guardar en el localStorage
                 setCarrito([]);
                 setCantidadTotal(0);
                 setTotal(0);
-                // Limpiar el localStorage
                 localStorage.removeItem('carrito');
                 localStorage.removeItem('total');
                 localStorage.removeItem('cantidadTotal');
@@ -137,14 +111,23 @@ export const CarritoProvider = ({ children }) => {
                 });
             }
         });
-
     }
 
+    // Función para vaciar el carrito sin confirmación
+    const vaciarCarrito2 = () => {
+        // Limpiar el carrito, actualizar estados y guardar en el localStorage
+        setCarrito([]);
+        setCantidadTotal(0);
+        setTotal(0);
+        localStorage.removeItem('carrito');
+        localStorage.removeItem('total');
+        localStorage.removeItem('cantidadTotal');
+    }
+
+    // Renderizamos el proveedor del contexto con su valor y los componentes hijos
     return (
         <CarritoContext.Provider value={{ carrito, total, cantidadTotal, agregarAlCarrito, eliminarProducto, vaciarCarrito, vaciarCarrito2 }}>
             {children}
         </CarritoContext.Provider>
-    )
+    );
 }
-
-//en el value enviamos el valor actual del carrito, los items, el total de la compra y las funciones de agregar, eliminar y vaciar carrito. 

@@ -9,10 +9,14 @@ const ItemDetail = ({ id, nombre, stock, precio, img, descripción }) => {
   const [agregaCantidad, setAgregarCantidad] = useState(0);
   const { agregarAlCarrito } = useContext(CarritoContext);
 
+  // Función que maneja el cambio en la cantidad seleccionada
   const manejadorCantidad = (cantidad) => {
     setAgregarCantidad(cantidad);
 
+    // Crear un objeto representando el item seleccionado
     const item = { id, nombre, precio, img };
+
+    // Llamar a la función agregarAlCarrito del contexto para añadir el item al carrito
     agregarAlCarrito(item, cantidad);
   };
 
@@ -20,11 +24,14 @@ const ItemDetail = ({ id, nombre, stock, precio, img, descripción }) => {
     <div className='containerDetail'>
       <div className='cardDetail'>
         <div className='container-close'>
+          {/* Enlace para volver a la página de productos */}
           <Link to="/productos" className='buttonClose poppins'>
             x
           </Link>
+          {/* Imagen del producto */}
           <img src={img} alt={nombre} />
         </div>
+        {/* Detalles del producto */}
         <h2 className='poppins'>Nombre: {nombre}</h2>
         <p className='poppins'>Precio: {precio}</p>
         <p className='poppins'>Id: {id}</p>
@@ -32,13 +39,16 @@ const ItemDetail = ({ id, nombre, stock, precio, img, descripción }) => {
 
         {stock > 0 ? (
           agregaCantidad > 0 ? (
+            // Enlace para ir al carrito si se ha seleccionado una cantidad
             <Link to="/cart" className='terminarCompra poppins'>
               Terminar compra
             </Link>
           ) : (
+            // Componente ItemCount para seleccionar la cantidad
             <ItemCount inicial={1} stock={stock} funcionAgregar={manejadorCantidad} />
           )
         ) : (
+          // Mensaje de sin stock si el producto no está disponible
           <p className='sinStock poppins'>Sin stock</p>
         )}
       </div>

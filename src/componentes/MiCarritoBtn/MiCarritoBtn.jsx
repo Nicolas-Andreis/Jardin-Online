@@ -1,7 +1,6 @@
 import React from 'react';
 import './MiCarritoBtn.css';
 import CartWidget from '../CartWidget/CartWidget';
-import { Link } from 'react-router-dom';
 
 const MiCarritoBtn = () => {
     return (

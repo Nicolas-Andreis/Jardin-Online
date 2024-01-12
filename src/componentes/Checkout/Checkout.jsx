@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import back from "../../imagenes/iconos/icons8-arrow-50.png";
 import './Checkout.css';
 import { useOrder } from '../../context/MisOrdenesContext';
-import MisOrdenes from "../MisOrdenes/MisOrdenes";
+
 
 const Checkout = () => {
     const { carrito, vaciarCarrito2, total, cantidadTotal } = useContext(CarritoContext);

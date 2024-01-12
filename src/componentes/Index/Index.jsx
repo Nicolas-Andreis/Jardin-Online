@@ -1,9 +1,6 @@
 import React from 'react'
-import { useState } from 'react';
 import Ilustraciones from '../Ilustraciones/Ilustraciones';
-import Categorias from '../Categorias/Categorias';
 import ItemListContainer from '../ItemListContainer/ItemListContainer';
-import CarritoBtn from '../MiCarritoBtn/MiCarritoBtn';
 import Footer from '../Footer/Footer';
 import './Index.css'
 const Index = () => {

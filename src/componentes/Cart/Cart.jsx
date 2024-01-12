@@ -6,6 +6,8 @@ import './Cart.css';
 
 const Cart = () => {
     const { carrito, vaciarCarrito, total, cantidadTotal, actualizarCarrito, actualizarTotal } = useContext(CarritoContext);
+
+    // Función para incrementar la cantidad de un producto en el carrito
     const incrementarCantidad = (item) => {
         const updatedCart = carrito.map(producto => {
             if (producto.item.id === item.id) {
@@ -16,11 +18,12 @@ const Cart = () => {
             }
             return producto;
         });
-        
+
         actualizarCarrito(updatedCart); // Actualizar el carrito con la cantidad actualizada
         actualizarTotal(total + item.precio); // Actualizar el total
     };
 
+    // Función para decrementar la cantidad de un producto en el carrito
     const decrementarCantidad = (item) => {
         const updatedCart = carrito.map(producto => {
             if (producto.item.id === item.id) {
@@ -35,6 +38,8 @@ const Cart = () => {
         actualizarCarrito(updatedCart); // Actualizar el carrito con la cantidad actualizada
         actualizarTotal(total - item.precio); // Actualizar el total
     };
+
+    // Si no hay productos en el carrito, mostrar un mensaje y un enlace para ver productos
     if (cantidadTotal === 0) {
         return (
             <div className="container-vacio">
@@ -44,9 +49,12 @@ const Cart = () => {
             </div>
         )
     }
+
     return (
         <div className="container-compras">
             <h2 className='poppins'>Mi carrito</h2>
+
+            {/* Mapear cada producto en el carrito a un componente CartItem */}
             {carrito.map((producto) => (
                 <CartItem
                     key={producto.item.id}
@@ -56,6 +64,8 @@ const Cart = () => {
                     onDecrementar={decrementarCantidad}
                 />
             ))}
+
+            {/* Botones para vaciar el carrito, finalizar la compra y mostrar el total */}
             <div className="containerbuttoncompras">
                 <button onClick={() => vaciarCarrito() } className="vaciarCarrito poppins">
                     Vaciar carrito
@@ -72,4 +82,4 @@ const Cart = () => {
     );
 }
 
-export default Cart
+export default Cart;
