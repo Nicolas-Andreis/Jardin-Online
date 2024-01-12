@@ -31,6 +31,7 @@ Haz tus compras con facilidad y comodidad a través de funcionalidades intuitiva
 - **Ver Carrito de Compras**
 - **Realizar una orden de compra**
 - **Historial de compras en mis ordenes**
+- **Carrito persistente (local storage)**
 
 
   
