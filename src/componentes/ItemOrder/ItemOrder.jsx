@@ -41,24 +41,24 @@ const ItemOrder = ({ orderId, showDetailsByDefault }) => {
         <div>
             {orderId && (
                 <div>
-                    <h3>Orden ID: {orderId}</h3>
+                    <h3 className='dotted'>Orden ID: {orderId}</h3>
                     {showDetails && orderDetails && (
                         <div>
-                            <p>Fecha: {orderDetails.fecha.toDate().toLocaleDateString()}</p>
-                            <p>Hora: {orderDetails.fecha.toDate().toLocaleTimeString()}</p>
-                            <p>Total de la compra: ${orderDetails.total}</p>
+                            <div className='container-fecha dotted'>
+                            <p>{orderDetails.fecha.toDate().toLocaleDateString()}</p>
+                            <p>{orderDetails.fecha.toDate().toLocaleTimeString()}</p>
+                            </div>
                             
-                            <p className='poppins'>Detalles de los productos:</p>
-                            <ul>
+                            <ul className='ul-productos dotted'>
                                 {orderDetails.items.map(item => (
                                     <li className='item-order-li' key={item.id}>
-                                        <p>Producto: {item.nombre}</p>
-                                        <p>Cantidad: {item.cantidad}</p>
-                                        
+                                        <p>{item.nombre}</p>
+                                        <p>X {item.cantidad}</p>
                                         {/* Agrega más detalles según la estructura de tus datos de productos */}
                                     </li>
                                 ))}
                             </ul>
+                            <p className='bold total'>Total de la compra: ${orderDetails.total}</p>
                         </div>
                     )}
                 </div>

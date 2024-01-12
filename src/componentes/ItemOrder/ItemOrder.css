@@ -1,5 +1,29 @@
 .item-order-li{
     color: black;
-    background-color: rgb(236, 236, 236);
     border-radius: .5rem;
+    margin: .1rem auto;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 .5rem;
+}
+.ul-productos{
+    display: flex;
+    flex-direction: column;
+}
+.dotted{
+    border-bottom: dotted 3px black;
+}
+.container-fecha{
+    display: flex;
+    justify-content: space-between;
+    padding: .2rem .5rem;
+    margin: 1rem auto;
+    align-items: center;
+}
+.bold{
+    font-weight: bold;
+}
+.total{
+    padding: .5rem;
 }
