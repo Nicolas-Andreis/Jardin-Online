@@ -29,6 +29,7 @@ Haz tus compras con facilidad y comodidad a través de funcionalidades intuitiva
   
 ## Experiencia Responsive
 Disfruta de la comodidad en cualquier lugar y en cualquier dispositivo gracias a nuestra interfaz totalmente responsive.
+![full responsive](https://github.com/Nicolas-Andreis/)
 
 ## Historial de Compras
 Mantén un registro claro de tus compras con la función "Mis Órdenes":
