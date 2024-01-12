@@ -1,30 +1,52 @@
 //1) Voy a importar useState y createContext que me permite crear un contexto que almacenará toda la logica de mi carrillo de compras. 
 
-import { useState, createContext } from "react";
+import { useState, createContext, useEffect } from "react";
 
 //2)Creamos el context: 
-
 export const CarritoContext = createContext({
     carrito: [],
     total: 0,
     cantidadTotal: 0
-})
-
-//El valor inicial es un objeto, con la propiedad carrito, que es una array vacio, el total de la compra, y la cantidad total de productos. 
+});
 
 export const CarritoProvider = ({ children }) => {
-    //Creamos los estados: 
-    const [carrito, setCarrito] = useState([]);
-    const [total, setTotal] = useState(0);
-    const [cantidadTotal, setCantidadTotal] = useState(0);
+    const [carrito, setCarrito] = useState(() => {
+        const carritoGuardado = JSON.parse(localStorage.getItem("carrito")) || [];
+        return carritoGuardado;
+    });
+    const [total, setTotal] = useState(() => {
+        const totalGuardado = parseFloat(localStorage.getItem("total")) || 0;
+        return totalGuardado;
+    });
+    const [cantidadTotal, setCantidadTotal] = useState(() => {
+        const cantidadTotalGuardada = parseInt(localStorage.getItem("cantidadTotal")) || 0;
+        return cantidadTotalGuardada;
+    });
 
-    //Verificamos por consola:  (después lo borramos)
-    console.log(carrito);
-    console.log("Cantidad Items: ", cantidadTotal);
-    console.log("Precio total de la compra: ", total);
+    // Cargar datos del localStorage al estado del carrito al montar el componente
+    useEffect(() => {
+        const carritoGuardado = JSON.parse(localStorage.getItem("carrito")) || [];
+        const totalGuardado = parseFloat(localStorage.getItem("total")) || 0;
+        const cantidadTotalGuardada = parseInt(localStorage.getItem("cantidadTotal")) || 0;
 
-    ///////////////////////////////////////////
+        setCarrito(carritoGuardado);
+        setTotal(totalGuardado);
+        setCantidadTotal(cantidadTotalGuardada);
+    }, []);
 
+    // Guardar datos en el localStorage cada vez que cambia el estado del carrito
+    useEffect(() => {
+        localStorage.setItem("carrito", JSON.stringify(carrito));
+        localStorage.setItem("total", total.toString());
+        localStorage.setItem("cantidadTotal", cantidadTotal.toString());
+    }, [carrito, total, cantidadTotal]);
+
+    const guardarEnLocalStorage = () => {
+        // Guardar datos en el localStorage
+        localStorage.setItem('carrito', JSON.stringify(carrito));
+        localStorage.setItem('total', total.toString());
+        localStorage.setItem('cantidadTotal', cantidadTotal.toString());
+    };
     //Agregamos algunas funciones para lo lógica del carrito: 
 
     const agregarAlCarrito = (item, cantidad) => {
@@ -46,6 +68,7 @@ export const CarritoProvider = ({ children }) => {
             setCarrito(carritoActualizado);
             setCantidadTotal(prev => prev + cantidad);
             setTotal(prev => prev + (item.precio * cantidad));
+            guardarEnLocalStorage();
         }
     }
 
@@ -70,6 +93,7 @@ export const CarritoProvider = ({ children }) => {
                 setCarrito(carritoActualizado);
                 setCantidadTotal(prev => prev - productoEliminado.cantidad);
                 setTotal(prev => prev - (productoEliminado.item.precio * productoEliminado.cantidad));
+                guardarEnLocalStorage();
                 Swal.fire({
                     title: "Eliminado",
                     text: "Eliminaste este producto",
@@ -84,6 +108,7 @@ export const CarritoProvider = ({ children }) => {
         setCarrito([]);
         setCantidadTotal(0);
         setTotal(0);
+        guardarEnLocalStorage();
     }
 
     const vaciarCarrito = () => {
@@ -101,6 +126,10 @@ export const CarritoProvider = ({ children }) => {
                 setCarrito([]);
                 setCantidadTotal(0);
                 setTotal(0);
+                // Limpiar el localStorage
+                localStorage.removeItem('carrito');
+                localStorage.removeItem('total');
+                localStorage.removeItem('cantidadTotal');
                 Swal.fire({
                     title: "Borrados",
                     text: "Tus productos se eliminaron",
