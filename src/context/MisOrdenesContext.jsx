@@ -2,8 +2,8 @@ import { createContext, useContext, useState, useEffect } from 'react';
 
 export const OrderContext = createContext({
     MisOrdenes: [],
-    agregarAMisOrdenes: () => {},
-    clearOrderHistory: () => {},
+    agregarAMisOrdenes: () => { },
+    clearOrderHistory: () => { },
 });
 
 export const OrderProvider = ({ children }) => {
@@ -25,10 +25,29 @@ export const OrderProvider = ({ children }) => {
     }, [MisOrdenes]);
 
     const clearOrderHistory = () => {
-        // Borra el historial del localStorage
-        localStorage.removeItem('MisOrdenes');
-        // Limpia el estado en el contexto
-        setMisOrdenes([]);
+        Swal.fire({
+            title: "Estas seguro?",
+            text: "Eliminaras tu historial de ordenes",
+            icon: "question",
+            showCancelButton: true,
+            confirmButtonColor: "#d33",
+            cancelButtonColor: "#3085d6",
+            confirmButtonText: "Eliminar",
+            cancelButtonText: "Conservar"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Borra el historial del localStorage
+                localStorage.removeItem('MisOrdenes');
+                // Limpia el estado en el contexto
+                setMisOrdenes([]);
+                Swal.fire({
+                    title: "Borradas",
+                    text: "Tus ordenes se eliminaron",
+                    icon: "error"
+                });
+            }
+        });
+
     };
 
     return (

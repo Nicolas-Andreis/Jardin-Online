@@ -67,6 +67,26 @@
     align-items: center;
 }
 
+.swal2-title {
+    font-family: poppins;
+}
+
+.swal2-html-container {
+    font-family: "poppins";
+}
+
+.swal2-confirm {
+    background-color: #739332 !important;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.swal2-cancel {
+    background-color: transparent !important;
+    color: #739332 !important;
+    border: #739332 1px solid !important;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
 @media (max-width: 768px) {
     .container-compras {
         width: 100%;

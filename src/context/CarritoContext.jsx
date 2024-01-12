@@ -83,7 +83,7 @@ export const CarritoProvider = ({ children }) => {
             confirmButtonColor: "#3085d6",
             cancelButtonColor: "#d33",
             confirmButtonText: "Eliminar",
-            cancelButtonText: "Cancelar"
+            cancelButtonText: "Cancelar",
         }).then((result) => {
             if (result.isConfirmed) {
                 const productoEliminado = carrito.find(prod => prod.item.id === id);
