@@ -1,5 +1,7 @@
 # <img src="./src/imagenes/logo/logo.png" alt="Logo de planta"  height="70"> Jardín Online 
 
+<img src="./src/imagenes/readme/jardin-online-desktop.png" alt="mis ordenes" > 
+
 Bienvenido a Jardín Online, tu destino virtual para el mundo de la jardinería. Con tecnologías de vanguardia como Vite, React y Firebase, nuestro sitio de comercio electrónico ofrece una experiencia completa y segura. Explora nuestra amplia gama de productos, desde plantas y bases hasta semillas y estructuras, todo diseñado para elevar tu jardín.
 
 Nuestro sitio es totalmente responsive, garantizando una experiencia óptima en cualquier dispositivo. Descubre la comodidad de ver productos, agregar al carrito, revisar tus selecciones y realizar órdenes con solo unos clics. Además, accede fácilmente a tu historial de compras con la función "Mis Órdenes". Únete a nosotros y haz que tu experiencia de jardinería sea excepcional en Jardín Online.
