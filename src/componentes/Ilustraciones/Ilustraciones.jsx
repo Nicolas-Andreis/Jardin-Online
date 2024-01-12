@@ -19,7 +19,7 @@ const Ilustraciones = () => {
                 <img src={Imagen2} alt="" />
                 </div>
                 
-                <h3 className='poppins'>Renovacion de plantas</h3>
+                <h3 className='poppins'>Renovación de plantas</h3>
             </div>
             <div className='center'>
                 <div className='circle'>
@@ -33,7 +33,7 @@ const Ilustraciones = () => {
                 <img src={Imagen4} alt="" />
                 </div>
                 
-                <h3 className='poppins'>Riego del jardin</h3>
+                <h3 className='poppins'>Riego del jardín</h3>
             </div>
 
         </div>
