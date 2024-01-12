@@ -7,11 +7,7 @@ import CarritoBtn from '../MiCarritoBtn/MiCarritoBtn';
 import Footer from '../Footer/Footer';
 import './Index.css'
 const Index = () => {
-    const [titulo, setTitulo] = useState('Todos los productos');
-
-    const cambiarTituloCategoria = (nombreCategoria) => {
-        setTitulo(nombreCategoria);
-    }
+ 
     return (
         <div>
             <div className="fondoImagen">

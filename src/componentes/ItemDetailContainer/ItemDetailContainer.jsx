@@ -9,7 +9,6 @@ const ItemDetailContainer = () => {
     const { idItem } = useParams();
 
     useEffect(() => {
-        console.log(idItem);
         const nuevoDoc = doc(db, "Inventario", idItem);
 
         getDoc(nuevoDoc)
@@ -18,7 +17,7 @@ const ItemDetailContainer = () => {
                 const nuevoProducto = { id: res.id, ...data };
                 setProducto(nuevoProducto);
             })
-            .catch(error => console.log("Se prohiben los findes ", error))
+            .catch(error => console.log("error", error))
     }, [idItem])
 
     return (

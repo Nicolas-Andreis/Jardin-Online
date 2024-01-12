@@ -7,12 +7,11 @@ import './Categorias.css';
 import { Link } from 'react-router-dom';
 
 
-const Categorias = ({ cambiarTitulo, cambiarCategoria }) => {
+const Categorias = ({ cambiarTitulo }) => {
     
 
     const handleClickCategoria = (nombreCategoria) => {
         cambiarTitulo(nombreCategoria);
-        cambiarCategoria(nombreCategoria);
         
     };
 

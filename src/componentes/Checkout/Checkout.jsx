@@ -78,7 +78,6 @@ const Checkout = () => {
                         vaciarCarrito2();
                         // Llama a la función para agregar el orderId al contexto de MisOrdenes
                         agregarAMisOrdenes(docRef.id);
-                        console.log(MisOrdenes);
                     })
                     .catch(error => {
                         console.error("Error al crear la orden: ", error);
