@@ -61,7 +61,7 @@ const ItemOrder = ({ orderId, showDetailsByDefault }) => {
                     {/* Sección de encabezado con el logo y el nombre de la tienda */}
                     <div className='flex dotted'>
                         <img src={logo} alt="jardin-online" className='logo-ticket' />
-                        <h3>Jarín Online</h3>
+                        <h3>Jardín Online</h3>
                     </div>
                     {/* Mostramos el ID de la orden */}
                     <h3 className='dotted'>Orden ID: {orderId}</h3>
