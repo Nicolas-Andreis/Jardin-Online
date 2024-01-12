@@ -46,7 +46,7 @@ Mantén un registro claro de tus compras con la función "Mis Órdenes":
 - **Realizar Órdenes de Compra**: Completa tu compra de manera rápida y sencilla.
 - **Revisar Historial de Compras**: Accede a tu historial para un seguimiento fácil y rápido.
 
-<img src="./src/imagenes/readme/misordenes.png" alt="mis ordenes" >
+<img src="./src/imagenes/readme/miorden.png" alt="mis ordenes" >
 
 Únete a nosotros en Jardín Online, donde la tecnología se encuentra con la naturaleza para brindarte la mejor experiencia de jardinería en línea.
 
