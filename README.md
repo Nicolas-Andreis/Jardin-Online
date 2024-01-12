@@ -22,6 +22,7 @@ Descubre nuestra extensa colección de productos diseñados para transformar tu 
 
 ## Funcionalides
 <img src="./src/imagenes/readme/micarrito.png" alt="mi carrito" >
+
 Haz tus compras con facilidad y comodidad a través de funcionalidades intuitivas:
 - **Ver una lista de Productos Disponibles**
 - **Agregar productos al Carrito de compras**
@@ -40,6 +41,8 @@ Disfruta de la comodidad en cualquier lugar y en cualquier dispositivo gracias a
 Mantén un registro claro de tus compras con la función "Mis Órdenes":
 - **Realizar Órdenes de Compra**: Completa tu compra de manera rápida y sencilla.
 - **Revisar Historial de Compras**: Accede a tu historial para un seguimiento fácil y rápido.
+
+<img src="./src/imagenes/readme/misordenes.png" alt="mis ordenes" >
 
 Únete a nosotros en Jardín Online, donde la tecnología se encuentra con la naturaleza para brindarte la mejor experiencia de jardinería en línea.
 
