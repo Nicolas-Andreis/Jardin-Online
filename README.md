@@ -21,16 +21,20 @@ Descubre nuestra extensa colección de productos diseñados para transformar tu 
 
 
 ## Funcionalides
+<img src="./src/imagenes/readme/micarrito.png" alt="mi carrito"  height="70">
 Haz tus compras con facilidad y comodidad a través de funcionalidades intuitivas:
 - **Ver una lista de Productos Disponibles**
 - **Agregar productos al Carrito de compras**
 - **Ver Carrito de Compras**
 - **Realizar una orden de compra**
 - **Historial de compras en mis ordenes**
+
+
   
 ## Experiencia Responsive
 Disfruta de la comodidad en cualquier lugar y en cualquier dispositivo gracias a nuestra interfaz totalmente responsive.
 ![full responsive](./src/imagenes/readme/jardin-online.png)
+<img src="./src/imagenes/readme/jardin-online.png" alt="mi carrito"  height="70">
 
 ## Historial de Compras
 Mantén un registro claro de tus compras con la función "Mis Órdenes":
