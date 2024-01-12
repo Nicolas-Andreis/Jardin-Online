@@ -27,3 +27,12 @@
 .total{
     padding: .5rem;
 }
+.logo-ticket{
+    width: 2rem;
+}
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: .5rem;
+}

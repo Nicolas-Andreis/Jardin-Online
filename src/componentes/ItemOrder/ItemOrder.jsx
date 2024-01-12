@@ -3,6 +3,7 @@ import { useOrder } from '../../context/MisOrdenesContext';
 import React, { useState, useEffect } from 'react';
 import { db } from '../../services/config';
 import { doc, getDoc } from 'firebase/firestore';
+import logo from "../../imagenes/logo/logo.png"
 import './ItemOrder.css'
 
 const ItemOrder = ({ orderId, showDetailsByDefault }) => {
@@ -41,14 +42,18 @@ const ItemOrder = ({ orderId, showDetailsByDefault }) => {
         <div>
             {orderId && (
                 <div>
+                    <div className='flex dotted'>
+                        <img src={logo} alt="jardin-online" className='logo-ticket' />
+                        <h3>Jarín Online</h3>
+                    </div>
                     <h3 className='dotted'>Orden ID: {orderId}</h3>
                     {showDetails && orderDetails && (
                         <div>
                             <div className='container-fecha dotted'>
-                            <p>{orderDetails.fecha.toDate().toLocaleDateString()}</p>
-                            <p>{orderDetails.fecha.toDate().toLocaleTimeString()}</p>
+                                <p>{orderDetails.fecha.toDate().toLocaleDateString()}</p>
+                                <p>{orderDetails.fecha.toDate().toLocaleTimeString()}</p>
                             </div>
-                            
+
                             <ul className='ul-productos dotted'>
                                 {orderDetails.items.map(item => (
                                     <li className='item-order-li' key={item.id}>
