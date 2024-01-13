@@ -60,3 +60,6 @@ Mantén un registro claro de tus compras con la función "Mis Órdenes":
 ## Ver sitio
 haz click en:
  https://nicolas-andreis.github.io/Jardin-Online/
+
+ ## Licencia
+ Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo LICENSE para obtener más información.
