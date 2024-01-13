@@ -10,26 +10,29 @@ import Cart from './componentes/Cart/Cart';
 import Checkout from './componentes/Checkout/Checkout';
 import { OrderProvider } from './context/MisOrdenesContext';
 import MisOrdenes from './componentes/MisOrdenes/MisOrdenes';
+
+
+
 const App = () => {
 
   return (
     <div className='container'>
       <BrowserRouter>
         <CarritoProvider>
-        <OrderProvider>
-          <NavBar />
-          <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/Jardin-Online/' element={<Home />} />
-            <Route path='/categoria/:idCategoria' element={<ItemListContainer />} />
-            <Route path="/item/:idItem" element={<ItemDetailContainer/>}  />
-            <Route path='/productos' element={<ItemListContainer />} />
-            <Route path='/nosotros' element={<Nosotros />} />
-            <Route path='/categoria/todos' element={<ItemListContainer />} />
-            <Route path='/cart' element={<Cart/>} />
-            <Route path='/checkout' element={<Checkout/>} />
-            <Route path='/misOrdenes' element={<MisOrdenes/>} />
-          </Routes>
+          <OrderProvider>
+            <NavBar />
+            <Routes>
+              <Route path='/' element={<Home />} />
+              <Route path='/Jardin-Online/' element={<Home />} />
+              <Route path='/categoria/:idCategoria' element={<ItemListContainer />} />
+              <Route path="/item/:idItem" element={<ItemDetailContainer />} />
+              <Route path='/productos' element={<ItemListContainer />} />
+              <Route path='/nosotros' element={<Nosotros />} />
+              <Route path='/categoria/todos' element={<ItemListContainer />} />
+              <Route path='/cart' element={<Cart />} />
+              <Route path='/checkout' element={<Checkout />} />
+              <Route path='/misOrdenes' element={<MisOrdenes />} />
+            </Routes>
           </OrderProvider>
         </CarritoProvider>
       </BrowserRouter>

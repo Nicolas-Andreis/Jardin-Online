@@ -34,7 +34,13 @@ Haz tus compras con facilidad y comodidad a través de funcionalidades intuitiva
 - **Carrito persistente (local storage)**
 - **Stock check**
 
-
+## Instalación
+Para instalar y ejectutar la aplicación en tu máquina local, sigue los siguientes pasos:
+1. clona el repositorio en tu máquina local
+2. abre una terminal en el directorio del proyecto
+3. Ejecuta el comando npm install para instalar las dependencias.
+4. Ejecuta el comando npm run dev para iniciar la aplicación.
+5. Abre tu navegador y navega a http://localhost:5173 para ver la aplicación en acción.
   
 ## Experiencia Responsive
 Disfruta de la comodidad en cualquier lugar y en cualquier dispositivo gracias a nuestra interfaz totalmente responsive.
