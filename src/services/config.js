@@ -6,7 +6,7 @@ import { getFirestore } from 'firebase/firestore';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyD1d0pkpMq7AEyTRQrtlOwlZtADcKXqBqQ",
+    apiKey: import.meta.env.VITE_API_KEY_FIREBASE_CONFIG,
     authDomain: "jardin-online.firebaseapp.com",
     projectId: "jardin-online",
     storageBucket: "jardin-online.appspot.com",
